@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    text-align: right;
+    position: relative;
+    color: white;
+    font-size: 0.8rem;
+    background-image: url('/html/img/f1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll; /* Cambiado de fixed → scroll */
+    min-height: 100vh;        /* min-height en vez de height para que no corte el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ============================================================
+    NAVBAR
+============================================================ */
+.navbar {
+    max-width: 1200px;
+    width: calc(100% - 2rem); /* Margen lateral en móvil */
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;           /* Links se apilan si no hay espacio */
+    justify-content: center;
+    gap: 0.5rem 1.5rem;        /* Reducido para pantallas pequeñas */
+    background: rgba(225, 255, 255, 0.15);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 80px;
+    border: 1px solid rgba(163, 192, 192, 0.432);
+    box-shadow:
+        0 8px 32px rgb(0, 0, 0),
+        inset 0 1px 0 rgba(249, 244, 255, 0.74);
+}
+/* ============================================================
+    NAV LINKS
+============================================================ */
+.nav-link {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: clamp(1rem, 3vw, 1.3rem); /* Escala según pantalla */
+    padding: 0.75rem 1.5rem;
+    min-height: 44px;          /* Área táctil mínima para móvil */
+    display: inline-flex;
+    align-items: center;
+    border-radius: 25px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: left 0.5s;
+}
+.nav-link:hover::before {
+    left: 100%;
+}
+.nav-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+button{
+    position:fixed;
+    left: 17rem
+}
+/* ============================================================
+    MEDIA QUERIES
+============================================================ */
+/* Móvil pequeño (< 480px): navbar más compacta */
+@media (max-width: 480px) {
+    .navbar {
+        border-radius: 20px;   /* Menos redondo para aprovechar el ancho */
+        gap: 0.25rem 0.75rem;
+        padding: 8px;
+        width: calc(100% - 1rem);
+    }
+    .nav-link {
+        padding: 0.6rem 1rem;
+    }
+}
+/* Tablet (≥ 600px): gap normal restaurado */
+@media (min-width: 600px) {
+    .navbar {
+        gap: 0.5rem 2rem;
+    }
+}
+/* Desktop (≥ 1024px): gap original */
+@media (min-width: 1024px) {
+    .navbar {
+        gap: 0.5rem 3rem;
+    }
+}

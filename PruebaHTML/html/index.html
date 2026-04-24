@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test web site</title>
+    
+    <!-- Icono de la página (favicon) -->
+    <link rel="icon" type="image/png" href="./html/img/pepe.png">
+    
+    <!-- Enlace a hojas de estilo externas -->
+    <link rel="stylesheet" href="./html/css/index.css">
+    <link rel="stylesheet" href="./html/css/contactos.css">
+
+    <!-- Estilos CSS internos (inline) -->
+    <style>
+        body{
+            font-family: "Times New Roman", serif; /* Corregido el nombre de la fuente */
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+        
+        <!-- Barra de navegación principal -->
+        <nav class="navbar">
+            <a href="./html/Sobre-mi.html" class="nav-link"><em>Sobre mi</em></a>
+            <a href="./html/Proyectos.html" class="nav-link"><em>Proyectos</em></a>
+            <a href="./html/Mascotas.html" class="nav-link"><em>Mascotas</em></a>
+        </nav>
+
+        <!-- ==================== SECCIÓN DE CONTACTO ==================== -->
+        <section id="contacto">
+            
+            <br>
+            <!-- Título principal de la sección -->
+            <h1><em>Contactos</em></h1>
+            
+            <!-- Formulario de contacto -->
+            <form>
+                <!-- Campo para el nombre -->
+                <label for="Nombre">Nombre</label>
+                <input type="text" id="Nombre" required>
+
+                <!-- Campo para el correo electrónico -->
+                <label for="Email">Correo:</label>
+                <input type="email" id="Email" required>
+
+                <!-- Campo para el mensaje -->
+                <label for="Mensaje">Mensaje</label>
+                <textarea id="Mensaje" rows="5" required></textarea>
+
+                <!-- Botón para enviar el formulario -->
+                <div class="button">
+                <button type="submit">Enviar</button>
+                </div>
+            </form>
+
+        </section>
+    </header>
+    <script src="script.js"></script>
+</body>
+</html>
